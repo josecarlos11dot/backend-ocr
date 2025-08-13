@@ -1,0 +1,26 @@
+{
+  "name": "backend-ocr",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node api/server.js",
+    "smee": "smee -u https://smee.io/Cu2SdYwAojt6PxFn -t http://localhost:3000/api/stream",
+    "dev": "vercel dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "serverless-http": "^3.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  },
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  }
+}
