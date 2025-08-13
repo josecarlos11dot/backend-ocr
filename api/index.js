@@ -1,10 +1,19 @@
-// api/index.js — Vercel Serverless (Express con basePath '/api')
+// api/index.js
 const express = require('express');
 const cors = require('cors');
 const serverless = require('serverless-http');
 
 const app = express();
 
+// ✅ CORS primero y con preflight
+app.use(cors());                 // permite cualquier origen (rápido para probar)
+app.options('*', cors());        // responde OPTIONS con los headers correctos
+
+app.use(express.json({ limit: '15mb' }));
+
+// ...tus rutas /health, /pendientes, etc...
+
+module.exports = serverless(app, { basePath: '/api' });
 // Middlewares
 app.use(express.json({ limit: '15mb' }));
 app.use(cors({
