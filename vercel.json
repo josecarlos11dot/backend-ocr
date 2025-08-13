@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/[...all].js": {
-      "runtime": "nodejs20.x"
-    }
-  }
-}
